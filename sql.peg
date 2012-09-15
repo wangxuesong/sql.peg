@@ -1,0 +1,19 @@
+## Parsing Expression Grammer sql
+
+package main
+
+# parser declaration
+
+type Peg Peg {
+}
+
+# Hierarchical syntax
+select_query <- Space* SELECT Space+ select_list
+select_list <- START
+             #/ select_sublist ( COMMA select_sublist )*
+#select_sublist <- 
+SELECT <- 'SELECT'
+START <- '*'
+COMMA <- ','
+Space <- ' ' / '\t' / EndOfLine
+EndOfLine <- '\r\n' / '\n' / '\r'
