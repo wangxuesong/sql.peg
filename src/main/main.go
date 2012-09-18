@@ -8,6 +8,7 @@ import (
 	"log"
 	"runtime"
 	// "time"
+    "sqlparser"
 )
 
 // var (
@@ -29,9 +30,9 @@ func main() {
 	//	}
 	// file := flag.Arg(0)
 
-	buffer := "SELECT *" // ioutil.ReadFile(file)
+	buffer := " SELECT * FROM a" // ioutil.ReadFile(file)
 
-	p := &Peg{Buffer: string(buffer)}
+	p := &sqlparser.Peg{Buffer: string(buffer)}
 	p.Init()
 	if err := p.Parse(); err != nil {
 		log.Fatal(err)
